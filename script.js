@@ -13,7 +13,7 @@ let buttonY2 = h + 50;
 
 function drawX(i, j) {
 	let gapW4 = w / 12;
-	strokeWeight(10);
+	strokeWeight(20);
 	stroke(0)
 	line(w / 3 * j + gapW4, h / 3 * i + gapW4, w / 3 * j + 3 * gapW4, h / 3 * i + 3 * gapW4);
 	line(w / 3 * j + 3 * gapW4, h / 3 * i + gapW4, w / 3 * j + gapW4, h / 3 * i + 3 * gapW4);
@@ -21,7 +21,7 @@ function drawX(i, j) {
 
 function drawO(i, j) {
 	let gapW2 = w / 6;
-	strokeWeight(10)
+	strokeWeight(20)
 	stroke(0)
 	fill(0, 250, 120)
 	ellipse(w / 3 * j + gapW2 , h / 3 * i + gapW2, gapW2, gapW2);
@@ -91,9 +91,11 @@ function mouseClicked() {
 	}
 
 	if (check4winner() === 'Draw') {
+		noStroke();
 		textSize(65);
 		fill(255)
 		textAlign(CENTER);
+		textStyle(BOLD);
 		text('DRAW', 210, 230);
 	}
 	else if (check4winner()){
@@ -103,10 +105,11 @@ function mouseClicked() {
 		else
 			winner = 'X';
 		winLine(check4winner()[0], check4winner()[1]);
-		stroke(0);
+		noStroke();
 		textSize(65);
-		fill(255);
+		fill(255,255,102);
 		textAlign(CENTER);
+		textStyle(BOLD);
 		text('GAME OVER', 210, 200);
 		text(winner + " WON", 210, 265);
 	}
