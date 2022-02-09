@@ -1,5 +1,4 @@
 let cols = 3, rows = 3;
-let displayed = 0;
 let w = 420;
 let h = 420;
 let player1 = 'X', player2 = 'O';
